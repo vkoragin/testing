@@ -1,5 +1,5 @@
 import { strict as assert } from "node:assert";
-import getFunction from "../functions.js";
+import getFunction from "./functions.js";
 
 const get = getFunction();
 
