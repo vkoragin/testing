@@ -1,20 +1,8 @@
-// @ts-check
+import { strict as assert } from "node:assert";
 import getFunction from "../functions.js";
 
 const get = getFunction();
 
-// BEGIN (write your solution here)
-if (get({ hello: "world" }, "hello") !== "world") {
-  throw new Error("Функция работает неверно!");
-}
-
-if (get({}, "hello", "kitty") !== "kitty") {
-  throw new Error("Функция работает неверно!");
-}
-
-if (get({ hello: "world" }, "hello", "kitty") !== "world") {
-  throw new Error("Функция работает неверно!");
-}
-
-console.log("Все тесты пройдены!");
-// END
+assert.equal(get({ hello: "world" }, "hello"), "world");
+assert.equal(get({}, "hello", "kitty"), "kitty");
+assert.equal(get({ hello: "world" }, "hello", "kitty"), "world");
